@@ -4,7 +4,9 @@ layout: default
 
 <div class="home">
   {{ content }}
-  <h1>v86online</h1>
+  <h1>{{ site.title | escape }}</h1>
+  <p>{{ site.description | escape }}</p>
+  <br />
   {% if site.posts.size > 0 %}
   <ul>
     {% for post in site.posts %}

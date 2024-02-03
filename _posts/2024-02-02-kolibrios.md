@@ -2,4 +2,4 @@
 layout: post
 title: KolibriOS
 ---
-{% include v86-floppy.html memory="32 * 1024 * 1024" disk="/../disks/kolibrios.img" %}
+{% include v86-floppy.html memory="32 * 1024 * 1024" disk="/v86online/disks/kolibrios.img" %}
