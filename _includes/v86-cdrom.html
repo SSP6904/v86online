@@ -1,0 +1,32 @@
+<script>
+"use strict";
+    
+window.onload = function()
+{
+    var emulator = window.emulator = new V86({
+    wasm_path: "/../src/v86.wasm",
+    memory_size: '{{ include.memory }}',
+    vga_memory_size: 2 * 1024 * 1024,
+    screen_container: document.getElementById("screen_container"),
+    bios: {
+        url: "/../src/seabios.bin",
+    },
+    vga_bios: {
+        url: "/../src/vgabios.bin",
+    },
+    cdrom: {
+        url: '{{ include.cdrom }}',
+    },
+        autostart: true,
+    });
+
+    document.getElementById("screen_container").onclick = function()
+    {
+        emulator.lock_mouse();
+    };
+}
+</script>
+<div id="screen_container">
+<div style="white-space: pre; font: 14px monospace; line-height: 14px"></div>
+<canvas style="display: none"></canvas>
+</div>
