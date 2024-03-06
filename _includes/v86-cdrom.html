@@ -20,13 +20,19 @@ window.onload = function()
         autostart: true,
     });
 
-    document.getElementById("screen_container").onclick = function()
+    document.getElementById("vga").onclick = function()
+    {
+        emulator.lock_mouse();
+    };
+    document.getElementById("lockmouse").onclick = function()
     {
         emulator.lock_mouse();
     };
 }
 </script>
+<button type="button" class="btn btn-primary" onclick="goFullscreen('vga'); return false">Fullscreen</button>
+<button type="button" id="lockmouse" class="btn btn-primary">Lock mouse</button>
 <div id="screen_container">
 <div style="white-space: pre; font: 14px monospace; line-height: 14px"></div>
-<canvas style="display: none"></canvas>
+<canvas style="display: none" id="vga"></canvas>
 </div>
