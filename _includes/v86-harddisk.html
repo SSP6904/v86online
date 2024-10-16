@@ -4,19 +4,19 @@
 window.onload = function()
 {
     var emulator = window.emulator = new V86({
-    wasm_path: "{{ relative_url }}/src/v86.wasm",
+    wasm_path: "/v86online/src/v86.wasm",
     memory_size: '{{ include.memory }}',
     vga_memory_size: 2 * 1024 * 1024,
     network_relay_url: 'wss://relay.widgetry.org',
     screen_container: document.getElementById("screen_container"),
     bios: {
-        url: "{{ relative_url }}/src/seabios.bin",
+        url: "/v86online/src/seabios.bin",
     },
     vga_bios: {
-        url: "{{ relative_url }}/src/vgabios.bin",
+        url: "/v86online/src/vgabios.bin",
     },
     hda: {
-        url: '{{ relative_url }}/disks/{{ include.disk }}',
+        url: '/v86online/disks/{{ include.disk }}',
         size: '{{ include.disk_size }}',
     },
         autostart: true,
