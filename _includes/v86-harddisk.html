@@ -4,15 +4,16 @@
 window.onload = function()
 {
     var emulator = window.emulator = new V86({
-    wasm_path: "/v86online/src/v86.wasm",
+    wasm_path: "/../src/v86.wasm",
     memory_size: '{{ include.memory }}',
     vga_memory_size: 2 * 1024 * 1024,
+    network_relay_url: 'wss://relay.widgetry.org',
     screen_container: document.getElementById("screen_container"),
     bios: {
-        url: "/v86online/src/seabios.bin",
+        url: "/../src/seabios.bin",
     },
     vga_bios: {
-        url: "/v86online/src/vgabios.bin",
+        url: "/../src/vgabios.bin",
     },
     hda: {
         url: '{{ include.disk }}',

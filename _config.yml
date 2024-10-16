@@ -1,10 +1,3 @@
 title: v86online
-email: support@ttnrtsite.me
-description: >- # this means to ignore newlines until "baseurl:"
-  Play v86 games in your browser!
-baseurl: "/v86online" # the subpath of your site, e.g. /blog
+#baseurl: "/v86online" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
